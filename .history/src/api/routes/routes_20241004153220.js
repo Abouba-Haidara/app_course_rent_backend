@@ -23,6 +23,10 @@ module.exports =  app => {
     router.get('/courses', coursesController.show);
     // modifier le statut d'une course par son id (PATCH)
     router.patch("/courses/:id/status", coursesController.update);
-    // route pour toutes les routes du API  (ex : ../api/users)
+
+    // route pour toutes les routes du API  (ex : ;;api/users)
     app.use('/api/', router);
+
+      
+
 }

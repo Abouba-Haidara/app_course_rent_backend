@@ -19,10 +19,13 @@ module.exports =  app => {
 
     // afficher tous les courses
     router.post('/courses', coursesController.create);
-    // afficher les courses
+    // afficher les course par son id
     router.get('/courses', coursesController.show);
-    // modifier le statut d'une course par son id (PATCH)
     router.patch("/courses/:id/status", coursesController.update);
-    // route pour toutes les routes du API  (ex : ../api/users)
+
+
     app.use('/api/', router);
+
+      
+
 }

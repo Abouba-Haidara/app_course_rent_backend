@@ -17,12 +17,14 @@ module.exports =  app => {
     // modifier un utilisateur par son id  (PUT)
     router.put("/users/:id", usersController.update);
 
-    // afficher tous les courses
+
     router.post('/courses', coursesController.create);
-    // afficher les courses
     router.get('/courses', coursesController.show);
-    // modifier le statut d'une course par son id (PATCH)
     router.patch("/courses/:id/status", coursesController.update);
-    // route pour toutes les routes du API  (ex : ../api/users)
+
+
     app.use('/api/', router);
+
+      
+
 }
