@@ -16,6 +16,10 @@ module.exports = mongoose =>  {
     status: {
          type: String, 
          default: 'active'
+    },
+   role: {
+         type: String, 
+         default: 'USER'
     }
  });
 
