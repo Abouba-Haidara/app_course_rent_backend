@@ -18,7 +18,7 @@ exports.update = async (req, res) => {
     const { status } = req.body;
 
     try {
-        const course = await Course.findById(req.params.id);
+        const course = await Course.findById(req.params.id).populate({ path: 'user',  model: 'User'});
         if (!course) return res.status(404).json({ message: 'Course non trouvée' });
 
         course.status = status; // Mettre à jour l'état de la course
@@ -32,7 +32,7 @@ exports.update = async (req, res) => {
 // Obtenir toutes les courses
 exports.show =  async (req, res) => {
     try {
-        const courses = await Course.find();
+        const courses = await Course.find().populate({ path: 'user',  model: 'User'});
         res.json(courses);
     } catch (error) {
         res.status(500).json({ error: error.message });
