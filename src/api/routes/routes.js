@@ -17,6 +17,7 @@ module.exports =  app => {
     router.put("/users/:id", usersController.update);
     // afficher tous les courses
     router.post('/courses', coursesController.create);
+    router.delete('/courses', coursesController.deleteAll);
     // afficher les courses
     router.get('/courses', coursesController.show);
     // modifier le statut d'une course par son id (PATCH)
