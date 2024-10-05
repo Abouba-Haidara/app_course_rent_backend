@@ -7,7 +7,8 @@ const CourseSchema = new Schema({
         type: String,
         enum: ['en attente', 'en cours', 'terminée'],
         default: 'en attente'
-    }
+    },
+    user: [ { type: mongoose.Schema.Types.ObjectId, ref: "User"}],
 }, { timestamps: true });
 
 const Course = mongoose.model('Course', CourseSchema);
