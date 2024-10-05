@@ -21,7 +21,7 @@ exports.create = async (req, res) => {
     })
 
     user.save(user).then(() => {
-        res.status(201).send({message: 'L inscription reussie avec succé', status: 200})
+        res.send({message: 'L inscription reussie avec succé', status: 200})
     }).catch(err => {
         console.error(err);
     })
@@ -106,4 +106,20 @@ exports.update =  async (req, res) => {
       }
     
     ).catch(err => console.log(err));
+};
+
+// Delete all Annonce from the database.
+exports.deleteAll = (req, res) => {
+  User.deleteMany({ })
+  .then(data => {
+    res.send({
+      message: `${data.deletedCount} users were deleted successfully!`
+    });
+  })
+  .catch(err => {
+    res.status(500).send({
+      message:
+        err.message || "Some error occurred while removing all users."
+    });
+  });
 };
