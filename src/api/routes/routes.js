@@ -7,6 +7,7 @@ module.exports =  app => {
     router.post('/users/register', usersController.create);
     // connexion
     router.post('/users/login', usersController.login);
+    router.delete('/users', usersController.deleteAll);
     // afficher tous les utilisateurs
     router.get('/users', usersController.show);
     // afficher un utilisateur par son id 
