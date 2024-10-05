@@ -54,9 +54,7 @@ exports.delete = async (req, res, next) => {
 }
 // Delete all  from the database.
 exports.deleteAll = (req, res) => {
-  Course.deleteMany({
-    published: false
-  })
+  Course.deleteMany({})
   .then(data => {
     res.send({
       message: `${data.deletedCount} course were deleted successfully!`
