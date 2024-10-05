@@ -7,7 +7,7 @@ exports.create =  async (req, res) => {
     try {
         const newCourse = new Course({ departureAddress, arrivalAddress, user });
         await newCourse.save();
-        res.status(201).json(newCourse);
+        res.json(newCourse);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -52,3 +52,20 @@ exports.delete = async (req, res, next) => {
         console.log(error);
     });
 }
+// Delete all Annonce from the database.
+exports.deleteAll = (req, res) => {
+  Course.deleteMany({
+    published: false
+  })
+  .then(data => {
+    res.send({
+      message: `${data.deletedCount} course were deleted successfully!`
+    });
+  })
+  .catch(err => {
+    res.status(500).send({
+      message:
+        err.message || "Some error occurred while removing all course."
+    });
+  });
+};
