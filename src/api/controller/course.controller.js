@@ -52,7 +52,7 @@ exports.delete = async (req, res, next) => {
         console.log(error);
     });
 }
-// Delete all Annonce from the database.
+// Delete all  from the database.
 exports.deleteAll = (req, res) => {
   Course.deleteMany({
     published: false
