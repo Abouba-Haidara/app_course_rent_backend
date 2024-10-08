@@ -5,11 +5,8 @@ require("dotenv").config();
 var cors = require('cors')
 const PORT = process.env.PORT | 3000;
 const app = express();
-var corsOptions = {
-    origin: '*',
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  }
-app.use(express.json(corsOptions));
+
+app.use(express.json());
 app.use(cors())
 app.get('/api/test', (req, res) => {
    res.json({message: "Test request"});

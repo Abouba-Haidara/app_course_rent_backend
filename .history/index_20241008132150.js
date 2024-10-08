@@ -6,7 +6,7 @@ var cors = require('cors')
 const PORT = process.env.PORT | 3000;
 const app = express();
 var corsOptions = {
-    origin: '*',
+    origin: 'http://example.com',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   }
 app.use(express.json(corsOptions));
