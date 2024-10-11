@@ -6,7 +6,7 @@ var cors = require('cors')
 const PORT = process.env.PORT | 3000;
 const app = express();
 var corsOptions = {
-    origin: 'https://application-course-frontend.vercel.app',
+    origin: 'https://application-course-frontend.vercel.app/login',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   }
 app.use(express.json());
