@@ -42,7 +42,7 @@ exports.show =  async (req, res) => {
 exports.showByUser =  async (req, res) => {
     try {
         const courses = await Course.find({
-            user: req.params.id
+            
         }).populate({ path: 'user',  model: 'User'});
         res.json(courses);
     } catch (error) {

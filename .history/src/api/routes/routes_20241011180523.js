@@ -24,7 +24,7 @@ module.exports =  app => {
     // afficher les courses
     router.get('/courses', coursesController.show);
     // afficher les courses
-    router.get('/courses/user/:id', coursesController.showByUser);
+    router.get('/courses', coursesController.show);
     // modifier le statut d'une course par son id (PATCH)
     router.patch("/courses/:id/status", coursesController.update);
     // route pour toutes les routes du API  (ex : ../api/users)

@@ -41,9 +41,7 @@ exports.show =  async (req, res) => {
 
 exports.showByUser =  async (req, res) => {
     try {
-        const courses = await Course.find({
-            user: req.params.id
-        }).populate({ path: 'user',  model: 'User'});
+        const courses = await Course.find().populate({ path: 'user',  model: 'User'});
         res.json(courses);
     } catch (error) {
         res.status(500).json({ error: error.message });
