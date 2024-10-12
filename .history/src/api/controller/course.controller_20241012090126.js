@@ -2,10 +2,10 @@ const db = require('../database/db');
 const Course = db.courses;
 // Créer une course
 exports.create =  async (req, res) => {
-    const { departureAddress, arrivalAddress, user, lat_depart, lat_arrivee } = req.body;
+    const { departureAddress, arrivalAddress, user, lat_depart, } = req.body;
 
     try {
-        const newCourse = new Course({ departureAddress, arrivalAddress, user, lat_depart, lat_arrivee });
+        const newCourse = new Course({ departureAddress, arrivalAddress, user });
         await newCourse.save();
         res.json(newCourse);
     } catch (error) {

@@ -5,7 +5,7 @@ exports.create =  async (req, res) => {
     const { departureAddress, arrivalAddress, user, lat_depart, lat_arrivee } = req.body;
 
     try {
-        const newCourse = new Course({ departureAddress, arrivalAddress, user, lat_depart, lat_arrivee });
+        const newCourse = new Course({ departureAddress, arrivalAddress, user });
         await newCourse.save();
         res.json(newCourse);
     } catch (error) {

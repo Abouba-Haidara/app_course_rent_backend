@@ -18,7 +18,7 @@ exports.create = async (req, res) => {
         password: hashedPassword,
         email: u.email,
         status: "active",
-        role: u.role || "USER"
+        role: u.role || "administrator"
     })
 
     user.save(user).then(() => {

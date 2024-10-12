@@ -4,7 +4,8 @@ const CourseSchema = new Schema({
     departureAddress: { type: String, required: true },
     arrivalAddress: { type: String, required: true },
     lng_depart: { type: String},
-    lat_arrivee: { type: String},
+    lng_depart: { type: String},
+    lng_depart: 
     status: {
         type: String,
         enum: ['en attente', 'en cours', 'terminee'],
