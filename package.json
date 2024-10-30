@@ -1,5 +1,5 @@
 {
-  "name": "course",
+  "name": "app_course_rent",
   "version": "1.0.0",
   "description": "course nodejs rest api et express, mongodb",
   "main": "index.js",
