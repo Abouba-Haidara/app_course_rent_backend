@@ -1,5 +1,7 @@
 
-Simple Mini Project - Car Rent | Backend | REST API  | NODEJS
+Simple Mini Project - Car Rent | Backend | REST API 
+
+NODEJS | EXPRESS | MONGODB
 
 
 ** Users **
